@@ -105,7 +105,7 @@ function Group() {
 function Nav() {
   return (
     <div className="content-stretch flex flex-[1_0_0] h-[40px] items-start justify-end min-h-px min-w-px relative" data-name="Nav">
-      <div aria-hidden="true" className="absolute border-[#face35] border-b-3 border-l-3 border-solid inset-0 pointer-events-none" />
+      <div aria-hidden="true" className="absolute border-[#face35] border-b-3 border-l-3 border-solid top-0 right-0 bottom-0 left-[40px] pointer-events-none" />
       <Group />
     </div>
   );
