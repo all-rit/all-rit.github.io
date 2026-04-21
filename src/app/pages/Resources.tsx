@@ -2,7 +2,7 @@ export default function Resources() {
   return (
     <div className="content-stretch flex flex-col gap-[20px] md:gap-[30px] items-start relative shrink-0 w-full">
       {/* Yellow Section */}
-      <div className="bg-[#face35] content-stretch flex flex-col items-center justify-center relative shrink-0 w-full max-w-[1440px] pl-[60px] pr-[0px] py-[40px]">
+      <div className="bg-[#face35] content-stretch flex flex-col items-center justify-center relative shrink-0 w-full pl-[60px] pr-[0px] py-[40px]">
         <div className="bg-white min-h-[300px] relative rounded-bl-[20px] rounded-tl-[20px] shrink-0 w-full">
           <div className="flex flex-col justify-center size-full">
             <div className="content-stretch flex flex-col gap-[20px] md:gap-[30px] items-start justify-center relative size-full p-[60px]">
@@ -24,7 +24,7 @@ export default function Resources() {
       </div>
 
       {/* Blue Section */}
-      <div className="bg-[#0144d5] content-stretch flex flex-col items-center justify-center relative shrink-0 w-full max-w-[1440px] pl-[60px] pr-[0px] py-[40px]">
+      <div className="bg-[#0144d5] content-stretch flex flex-col items-center justify-center relative shrink-0 w-full pl-[60px] pr-[0px] py-[40px]">
         <div className="bg-white min-h-[300px] relative rounded-bl-[20px] rounded-tl-[20px] shrink-0 w-full">
           <div className="flex flex-col justify-center size-full">
             <div className="content-stretch flex flex-col gap-[20px] md:gap-[30px] items-start justify-center relative size-full p-[60px]">

@@ -249,7 +249,7 @@ function PIsSection() {
 
 export default function PIs() {
   return (
-    <div className="bg-[#0144d5] content-stretch flex flex-col items-center justify-center relative shrink-0 w-full max-w-[1440px] pl-[60px] pr-[0px] py-[40px]" data-name="PIs">
+    <div className="bg-[#0144d5] content-stretch flex flex-col items-center justify-center relative shrink-0 w-full pl-[60px] pr-[0px] py-[40px]" data-name="PIs">
       <PIsSection />
     </div>
   );

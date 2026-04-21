@@ -29,7 +29,7 @@ function AboutUs() {
 
 export default function AboutUsSection() {
   return (
-    <div className="bg-[#face35] content-stretch flex flex-col items-center justify-center relative shrink-0 w-full max-w-[1440px] pl-[60px] pr-[0px] py-[40px]" data-name="About Us Section">
+    <div className="bg-[#face35] content-stretch flex flex-col items-center justify-center relative shrink-0 w-full pl-[60px] pr-[0px] py-[40px]" data-name="About Us Section">
       <AboutUs />
     </div>
   );

@@ -26,7 +26,4 @@ export const router = createBrowserRouter([
       { path: "professional-development", Component: ProfessionalDevelopment },
     ],
   },
-],
-{
-  basename: "/all-rit.github.io/",
-});
+]);
