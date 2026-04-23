@@ -90,7 +90,7 @@ function Logo() {
 function Frame() {
   return (
     <div className="col-1 content-stretch flex gap-[8px] md:gap-[16px] lg:gap-[24px] items-center justify-center ml-0 mt-0 px-[8px] md:px-[16px] lg:px-[24px] relative row-1 flex-wrap">
-      <div className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[16px] lg:text-[18px] text-center">
+      <div className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[16px] lg:text-[18px] text-center">
         <p className="leading-[1.2] break-words">Home</p>
       </div>
       <div className="hidden md:flex h-[18px] items-center justify-center relative shrink-0 w-0" style={{ "--transform-inner-width": "1200", "--transform-inner-height": "19" } as React.CSSProperties}>
@@ -104,7 +104,7 @@ function Frame() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[16px] lg:text-[18px] text-center">
+      <div className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[16px] lg:text-[18px] text-center">
         <p className="leading-[1.2] break-words">Resources</p>
       </div>
       <div className="hidden md:flex h-[18px] items-center justify-center relative shrink-0 w-0" style={{ "--transform-inner-width": "1200", "--transform-inner-height": "19" } as React.CSSProperties}>
@@ -118,7 +118,7 @@ function Frame() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[16px] lg:text-[18px] text-center">
+      <div className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[16px] lg:text-[18px] text-center">
         <p className="leading-[1.2] break-words">Partners</p>
       </div>
       <div className="hidden md:flex h-[18px] items-center justify-center relative shrink-0 w-0" style={{ "--transform-inner-width": "1200", "--transform-inner-height": "19" } as React.CSSProperties}>
@@ -132,7 +132,7 @@ function Frame() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[14px] lg:text-[18px] text-center max-w-[150px] md:max-w-none">
+      <div className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[14px] lg:text-[18px] text-center max-w-[150px] md:max-w-none">
         <p className="leading-[1.2] break-words">Professional Development</p>
       </div>
     </div>
@@ -196,7 +196,7 @@ function AboutUs() {
     <div className="bg-white min-h-[300px] relative rounded-bl-[20px] rounded-tl-[20px] shrink-0 w-full" data-name="About Us">
       <div className="flex flex-col justify-center size-full">
         <div className="content-stretch flex flex-col gap-[20px] md:gap-[30px] items-start justify-center relative size-full p-[60px]">
-          <div className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[28px] md:text-[40px] text-black w-full">
+          <div className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[28px] md:text-[40px] text-black w-full">
             <p className="leading-[1.2]">About Us</p>
           </div>
           <AboutUsText />
@@ -245,7 +245,7 @@ function Frame1({ pi }: { pi: typeof piData[0] }) {
 function Frame2({ pi }: { pi: typeof piData[0] }) {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-full items-start justify-center leading-[1.4] min-h-px min-w-px not-italic relative text-black">
-      <div className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center relative shrink-0 text-[18px] md:text-[20px] w-full">
+      <div className="flex flex-col font-['Poppins',sans-serif] justify-center relative shrink-0 text-[18px] md:text-[20px] w-full">
         <p className="leading-[1.4]">{pi.name}</p>
       </div>
       <div className="flex flex-col font-['Calibri:Regular',sans-serif] justify-center relative shrink-0 text-[16px] md:text-[18px] w-full">
@@ -299,7 +299,7 @@ function PICard({ pi, isActive, onClick }: { pi: typeof piData[0]; isActive: boo
       <div className="bg-white relative rounded-bl-[10px] rounded-br-[10px] shrink-0 w-full">
         <div className="flex flex-col justify-center overflow-clip rounded-[inherit] size-full">
           <div className="content-stretch flex flex-col gap-[5px] items-start justify-center leading-[normal] not-italic px-[10px] py-[8px] relative text-black w-full">
-            <div className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center relative shrink-0 text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] w-full">
+            <div className="flex flex-col font-['Poppins',sans-serif] justify-center relative shrink-0 text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] w-full">
               <p className="leading-[normal] break-words">{pi.name}</p>
             </div>
             <div className="flex flex-col font-['Calibri:Regular',sans-serif] justify-center relative shrink-0 text-[11px] sm:text-[12px] md:text-[13px] w-full">
@@ -405,7 +405,7 @@ function PIsSection() {
     <div className="bg-white relative rounded-bl-[20px] rounded-tl-[20px] shrink-0 w-full" data-name="PIs Section">
       <div className="flex flex-col justify-center size-full">
         <div className="content-stretch flex flex-col gap-[30px] md:gap-[50px] items-start justify-center relative w-full pl-[60px] pr-[60px] py-[60px]">
-          <div className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[28px] md:text-[40px] text-black w-full">
+          <div className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[28px] md:text-[40px] text-black w-full">
             <p className="leading-[1.2]">Principal Investigators</p>
           </div>
           <PIsText />

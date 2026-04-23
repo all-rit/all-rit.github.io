@@ -5,7 +5,7 @@ function InstitutionCard() {
       <div className="bg-white h-[100px] relative rounded-bl-[20px] rounded-br-[20px] shrink-0 w-full">
         <div className="flex flex-col justify-center overflow-clip rounded-[inherit] size-full">
           <div className="content-stretch flex flex-col items-start justify-center px-[30px] py-[10px] relative size-full">
-            <div className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[20px] text-black whitespace-nowrap">
+            <div className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[20px] text-black whitespace-nowrap">
               <p className="leading-[normal]">Lorem Ipsum</p>
             </div>
           </div>
@@ -23,7 +23,7 @@ export default function Partners() {
         <div className="bg-white min-h-[300px] relative rounded-bl-[20px] rounded-tl-[20px] shrink-0 w-full">
           <div className="flex flex-col justify-center size-full">
             <div className="content-stretch flex flex-col gap-[20px] md:gap-[30px] items-start justify-center relative size-full p-[60px]">
-              <div className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[28px] md:text-[40px] text-black w-full">
+              <div className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[28px] md:text-[40px] text-black w-full">
                 <p className="leading-[1.2]">Partners</p>
               </div>
               <div className="relative shrink-0 w-full">

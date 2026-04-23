@@ -1,47 +1,52 @@
-import imgRectangle1 from "figma:asset/caaf19ddeeb68825ccf40dafa063302a406a1aaf.png";
+import dan from "../../assets/PIs/dan.jpeg";
+import farzana from "../../assets/PIs/farzana.png";
+import cathleen from "../../assets/PIs/cathleen.jpg";
+import zenon from "../../assets/PIs/zenon.jpg";
+import endadul from "../../assets/PIs/endadul.jpg";
+
 import { useState, useRef, useEffect } from "react";
 
 // PI data
 const piData = [
-  {
+    {
     id: 0,
-    name: "Farzana Rahman",
-    title: "Principal Investigator",
-    institution: "Syracuse University",
-    bio: "Lorem ipsum dolor sit amet consectetur. Tristique tellus sit donec sed. Venenatis condimentum massa pellentesque elit. Accumsan libero volutpat lectus sagittis ac bibendum neque. Leo augue egestas gravida etiam. Id morbi blandit condimentum rhoncus commodo amet. Pellentesque feugiat cursus quam diam aliquam enim dignissim.",
-    image: imgRectangle1,
+    name: "Daniel Krutz",
+    title: "Associate Professor, Software Engineering",
+    institution: "Rochester Institute of Technology",
+    link: "https://www.rit.edu/directory/dxkvse-daniel-krutz",
+    image: dan,
   },
   {
     id: 1,
-    name: "John Smith",
-    title: "Principal Investigator",
-    institution: "Stanford University",
-    bio: "Expert in computational biology and machine learning applications in healthcare research. Leading multiple NIH-funded projects.",
-    image: null,
+    name: "Farzana Rahman",
+    title: "Associate Teaching Professor",
+    institution: "Syracuse University",
+    link: "https://ecs.syracuse.edu/faculty-staff/farzana-rahman/",
+    image: farzana,
   },
   {
     id: 2,
-    name: "Sarah Johnson",
-    title: "Principal Investigator",
-    institution: "MIT",
-    bio: "Specializing in biomedical engineering and developing innovative solutions for medical diagnostics and treatment.",
-    image: null,
+    name: "Cathleen Cerosaletti",
+    title: "Associate Director of Program Evaluation",
+    institution: "University of Rochester",
+    link: "https://www.rochester.edu/warner/center/about/meet-the-team/",
+    image: cathleen,
   },
   {
     id: 3,
-    name: "Michael Chen",
-    title: "Principal Investigator",
-    institution: "UC Berkeley",
-    bio: "Focused on data science and statistical methods for clinical trials and epidemiological studies.",
-    image: null,
+    name: "Zenon Borys",
+    title: "Assistant Professor (Clinical) and Assistant Director LiDA",
+    institution: "University of Rochester",
+    link: "https://www.warner.rochester.edu/directory/zenon-borys",
+    image: zenon,
   },
   {
     id: 4,
-    name: "Emily Davis",
-    title: "Principal Investigator",
-    institution: "Harvard University",
-    bio: "Researching precision medicine and personalized treatment approaches using genomic data and AI technologies.",
-    image: null,
+    name: "Endadul Hoque",
+    title: "Assistant Professor",
+    institution: "Syracuse University",
+    link: "https://ecs.syracuse.edu/faculty-staff/endadul-hoque",
+    image: endadul,
   },
 ];
 
@@ -51,7 +56,7 @@ function PIsText() {
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center pr-0 md:pr-[300px] relative w-full">
           <div className="flex flex-[1_0_0] flex-col font-['Calibri:Regular',sans-serif] justify-center leading-[1.4] min-h-px min-w-px not-italic relative text-[16px] md:text-[18px] text-black">
-            <p className="leading-[1.4] p-[0px]">Lorem ipsum dolor sit amet consectetur. At urna vel diam egestas pulvinar integer. Aliquam non arcu dui integer nam rutrum neque adipiscing. Phasellus amet adipiscing dolor leo curabitur sit ipsum magna est.</p>
+            <p className="leading-[1.4] p-[0px]">These are the principal investigators and advisors behind the Accessible Learning Labs team. They provide guidance and leadership for our student team! We invite you to get to know each of them through their individualized cards.</p>
           </div>
         </div>
       </div>
@@ -76,15 +81,19 @@ function Frame1({ pi }: { pi: typeof piData[0] }) {
 function Frame2({ pi }: { pi: typeof piData[0] }) {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-full items-start justify-center leading-[1.4] min-h-px min-w-px not-italic relative text-black">
-      <div className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center relative shrink-0 text-[18px] md:text-[20px] w-full">
-        <p className="leading-[1.4]">{pi.name}</p>
+      <div className="flex flex-col font-['Poppins',sans-serif] justify-center relative shrink-0 text-[18px] md:text-[20px] w-full">
+        <a
+          href={pi.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="leading-[1.4] text-black hover:text-[#0144d5] underline underline-offset-2 transition-colors"
+        >
+          {pi.name}
+        </a>
       </div>
       <div className="flex flex-col font-['Calibri:Regular',sans-serif] justify-center relative shrink-0 text-[16px] md:text-[18px] w-full">
         <p className="leading-[1.4] mb-0">{pi.title}</p>
         <p className="leading-[1.4]">{pi.institution}</p>
-      </div>
-      <div className="flex flex-col font-['Calibri:Regular',sans-serif] justify-center relative shrink-0 text-[16px] md:text-[18px] w-full">
-        <p className="leading-[1.4]">{pi.bio}</p>
       </div>
     </div>
   );
@@ -129,12 +138,9 @@ function PICard({ pi, isActive, onClick }: { pi: typeof piData[0]; isActive: boo
       </div>
       <div className="bg-white relative rounded-bl-[10px] rounded-br-[10px] shrink-0 w-full">
         <div className="flex flex-col justify-center overflow-clip rounded-[inherit] size-full">
-          <div className="content-stretch flex flex-col gap-[5px] items-start justify-center leading-[normal] not-italic px-[10px] py-[8px] relative text-black w-full">
-            <div className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center relative shrink-0 text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] w-full">
-              <p className="leading-[normal] break-words">{pi.name}</p>
-            </div>
-            <div className="flex flex-col font-['Calibri:Regular',sans-serif] justify-center relative shrink-0 text-[11px] sm:text-[12px] md:text-[13px] w-full">
-              <p className="leading-[normal] break-words">{pi.title}</p>
+          <div className="content-stretch flex flex-col gap-[5px] items-center justify-center leading-[normal] not-italic px-[10px] py-[14px] relative text-black w-full">
+            <div className="flex flex-col font-['Poppins',sans-serif] justify-center relative shrink-0 text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] w-full">
+                {pi.name}
             </div>
           </div>
         </div>
@@ -236,7 +242,7 @@ function PIsSection() {
     <div className="bg-white relative rounded-bl-[20px] rounded-tl-[20px] shrink-0 w-full" data-name="PIs Section">
       <div className="flex flex-col justify-center size-full">
         <div className="content-stretch flex flex-col gap-[30px] md:gap-[50px] items-start justify-center relative w-full pl-[60px] pr-[60px] py-[60px]">
-          <div className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[28px] md:text-[40px] text-black w-full">
+          <div className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[28px] md:text-[40px] text-black w-full">
             <p className="leading-[1.2]">Principal Investigators</p>
           </div>
           <PIsText />

@@ -15,7 +15,7 @@ export default function AccordionItem({ title, content }: AccordionItemProps) {
         onClick={() => setIsOpen(!isOpen)}
         className="content-stretch flex h-[60px] items-center justify-between relative shrink-0 w-full cursor-pointer bg-transparent border-none p-0"
       >
-        <div className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[28px] md:text-[40px] text-black w-full text-left">
+        <div className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[28px] md:text-[40px] text-black w-full text-left">
           <p className="leading-[1.2]">{title}</p>
         </div>
         <div

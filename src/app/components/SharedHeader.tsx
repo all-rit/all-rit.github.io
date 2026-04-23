@@ -45,7 +45,7 @@ function Logo() {
 function Frame() {
   return (
     <div className="col-1 content-stretch flex gap-[8px] md:gap-[16px] lg:gap-[24px] items-center justify-center ml-0 mt-0 px-[8px] md:px-[16px] lg:px-[24px] relative row-1 flex-wrap">
-      <Link to="/" className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[16px] lg:text-[18px] text-center no-underline hover:opacity-80 transition-opacity">
+      <Link to="/" className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[16px] lg:text-[18px] text-center no-underline hover:opacity-80 transition-opacity">
         <p className="leading-[1.2] break-words">Home</p>
       </Link>
       <div className="hidden md:flex h-[18px] items-center justify-center relative shrink-0 w-0" style={{ "--transform-inner-width": "1200", "--transform-inner-height": "19" } as React.CSSProperties}>
@@ -59,7 +59,7 @@ function Frame() {
           </div>
         </div>
       </div>
-      <Link to="/resources" className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[16px] lg:text-[18px] text-center no-underline hover:opacity-80 transition-opacity">
+      <Link to="/resources" className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[16px] lg:text-[18px] text-center no-underline hover:opacity-80 transition-opacity">
         <p className="leading-[1.2] break-words">Resources</p>
       </Link>
       <div className="hidden md:flex h-[18px] items-center justify-center relative shrink-0 w-0" style={{ "--transform-inner-width": "1200", "--transform-inner-height": "19" } as React.CSSProperties}>
@@ -73,7 +73,7 @@ function Frame() {
           </div>
         </div>
       </div>
-      <Link to="/partners" className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[16px] lg:text-[18px] text-center no-underline hover:opacity-80 transition-opacity">
+      <Link to="/partners" className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[16px] lg:text-[18px] text-center no-underline hover:opacity-80 transition-opacity">
         <p className="leading-[1.2] break-words">Partners</p>
       </Link>
       <div className="hidden md:flex h-[18px] items-center justify-center relative shrink-0 w-0" style={{ "--transform-inner-width": "1200", "--transform-inner-height": "19" } as React.CSSProperties}>
@@ -87,7 +87,7 @@ function Frame() {
           </div>
         </div>
       </div>
-      <Link to="/professional-development" className="flex flex-col font-['Poppins:Bold',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[14px] lg:text-[18px] text-center max-w-[150px] md:max-w-none no-underline hover:opacity-80 transition-opacity">
+      <Link to="/professional-development" className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[14px] lg:text-[18px] text-center max-w-[150px] md:max-w-none no-underline hover:opacity-80 transition-opacity">
         <p className="leading-[1.2] break-words">Professional Development</p>
       </Link>
     </div>
