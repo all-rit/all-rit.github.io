@@ -1,5 +1,4 @@
-import svgPaths from "../../imports/Home-1/svg-0n173wg4lb";
-import MobileHeader from "../../imports/Header/Header";
+import svgPaths from "./logo.ts";
 import { Link } from "react-router";
 
 function Logo() {
@@ -116,9 +115,21 @@ export default function SharedHeader() {
     <>
       {/* Mobile Header - with hamburger menu */}
       <div className="md:hidden w-full">
-        <MobileHeader />
+        <div className="bg-white content-stretch flex items-center justify-between px-[30px] py-[20px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.1)] size-full" data-name="Header">
+          <Logo />
+          <div className="h-[50px] relative shrink-0 w-[70px]">
+            <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 70 50">
+              <g id="Frame 2">
+                <rect height="49" rx="4.5" stroke="var(--stroke-0, #CECECE)" width="69" x="0.5" y="0.5" />
+                <path d="M20 15H50" id="Vector 1" stroke="var(--stroke-0, #CECECE)" strokeWidth="3" />
+                <path d="M20 25H50" id="Vector 2" stroke="var(--stroke-0, #CECECE)" strokeWidth="3" />
+                <path d="M20 35H50" id="Vector 3" stroke="var(--stroke-0, #CECECE)" strokeWidth="3" />
+              </g>
+            </svg>
+          </div>
+        </div>
       </div>
-      
+
       {/* Desktop Header - with navigation */}
       <div className="hidden md:block bg-white relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.2)] shrink-0 w-full" data-name="Header">
         <div className="flex flex-row items-center size-full">
