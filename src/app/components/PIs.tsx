@@ -4,11 +4,11 @@ import cathleen from "../../assets/PIs/cathleen.jpg";
 import zenon from "../../assets/PIs/zenon.jpg";
 import endadul from "../../assets/PIs/endadul.jpg";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 
 // PI data
 const piData = [
-    {
+  {
     id: 0,
     name: "Daniel Krutz",
     title: "Associate Professor, Software Engineering",
@@ -54,7 +54,7 @@ function PIsText() {
   return (
     <div className="relative shrink-0 w-full" data-name="PIs Text">
       <div className="flex flex-row items-center justify-center size-full">
-        <div className="content-stretch flex items-center justify-center pr-0 md:pr-[300px] relative w-full">
+        <div className="content-stretch flex items-center justify-center pr-0 relative w-full">
           <div className="flex flex-[1_0_0] flex-col font-['Calibri:Regular',sans-serif] justify-center leading-[1.4] min-h-px min-w-px not-italic relative text-[16px] md:text-[18px] text-black">
             <p className="leading-[1.4] p-[0px]">These are the principal investigators and advisors behind the Accessible Learning Labs team. They provide guidance and leadership for our student team! We invite you to get to know each of them through their individualized cards.</p>
           </div>
@@ -123,13 +123,12 @@ function PICard({ pi, isActive, onClick }: { pi: typeof piData[0]; isActive: boo
     <button
       ref={cardRef}
       onClick={onClick}
-      className={`content-stretch flex flex-col items-center relative shrink-0 w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] transition-all ${
-        isActive ? 'scale-105' : 'hover:scale-105'
-      }`}
+      className={`content-stretch flex flex-col items-center relative shrink-0 flex-1 min-w-0 transition-all ${isActive ? 'scale-105' : 'hover:scale-105'
+        }`}
       data-name="PI"
       data-active={isActive}
     >
-      <div className="h-[140px] sm:h-[160px] md:h-[180px] lg:h-[200px] relative rounded-tl-[10px] rounded-tr-[10px] shrink-0 w-full overflow-hidden">
+      <div className="aspect-square relative rounded-tl-[10px] rounded-tr-[10px] shrink-0 w-full overflow-hidden">
         {pi.image ? (
           <img alt={pi.name} className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={pi.image} />
         ) : (
@@ -139,8 +138,8 @@ function PICard({ pi, isActive, onClick }: { pi: typeof piData[0]; isActive: boo
       <div className="bg-white relative rounded-bl-[10px] rounded-br-[10px] shrink-0 w-full">
         <div className="flex flex-col justify-center overflow-clip rounded-[inherit] size-full">
           <div className="content-stretch flex flex-col gap-[5px] items-center justify-center leading-[normal] not-italic px-[10px] py-[14px] relative text-black w-full">
-            <div className="flex flex-col font-['Poppins',sans-serif] justify-center relative shrink-0 text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] w-full">
-                {pi.name}
+            <div className="flex flex-col font-['Poppins',sans-serif] justify-center relative shrink-0 text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] w-full text-center">
+              {pi.name}
             </div>
           </div>
         </div>
@@ -150,65 +149,18 @@ function PICard({ pi, isActive, onClick }: { pi: typeof piData[0]; isActive: boo
 }
 
 function PIsList({ activePiIndex, onPiSelect }: { activePiIndex: number; onPiSelect: (index: number) => void }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  const handlePrev = () => {
-    onPiSelect(activePiIndex === 0 ? piData.length - 1 : activePiIndex - 1);
-  };
-
-  const handleNext = () => {
-    onPiSelect((activePiIndex + 1) % piData.length);
-  };
-
-  // Scroll active card to center when it changes
-  useEffect(() => {
-    const container = containerRef.current;
-    const activeCard = container?.querySelector('[data-active="true"]') as HTMLElement;
-    
-    if (container && activeCard) {
-      const containerRect = container.getBoundingClientRect();
-      const cardRect = activeCard.getBoundingClientRect();
-      const scrollLeft = activeCard.offsetLeft - (containerRect.width / 2) + (cardRect.width / 2);
-      
-      container.scrollTo({
-        left: scrollLeft,
-        behavior: 'smooth'
-      });
-    }
-  }, [activePiIndex]);
-
   return (
-    <div className="bg-[#face35] relative rounded-[16px] md:rounded-none md:rounded-bl-[16px] shrink-0 w-full" data-name="PIs List">
-      <div className="flex flex-row items-center overflow-x-hidden rounded-[inherit] size-full">
-        <div className="content-stretch flex gap-[10px] sm:gap-[12px] md:gap-[15px] items-center p-[15px] md:p-[20px] relative w-full justify-between">
-          <button
-            onClick={handlePrev}
-            className="flex flex-col font-['Poppins:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60px] text-white min-w-[20px] md:min-w-[30px] cursor-pointer bg-transparent border-none hover:scale-110 transition-transform"
-            aria-label="Previous PI"
-          >
-            <p className="leading-[normal]">{`<`}</p>
-          </button>
-          <div ref={containerRef} className="flex gap-[10px] sm:gap-[12px] md:gap-[15px] items-center flex-1 overflow-x-auto scroll-smooth" style={{ scrollbarWidth: 'none' }}>
-            {/* Add spacer before first card to enable centering */}
-            <div className="shrink-0" style={{ width: 'calc(50% - 70px)' }} />
-            {piData.map((pi, index) => (
-              <PICard
-                key={pi.id}
-                pi={pi}
-                isActive={index === activePiIndex}
-                onClick={() => onPiSelect(index)}
-              />
-            ))}
-            {/* Add spacer after last card to enable centering */}
-            <div className="shrink-0" style={{ width: 'calc(50% - 70px)' }} />
-          </div>
-          <button
-            onClick={handleNext}
-            className="flex flex-col font-['Poppins:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60px] text-white min-w-[20px] md:min-w-[30px] cursor-pointer bg-transparent border-none hover:scale-110 transition-transform"
-            aria-label="Next PI"
-          >
-            <p className="leading-[normal]">{`>`}</p>
-          </button>
+    <div className="bg-[#face35] relative rounded-[16px] md:rounded-none md:rounded-tr-[16px] md:rounded-bl-[16px] md:rounded-br-[16px] shrink-0 w-full" data-name="PIs List">
+      <div className="flex flex-row items-center rounded-[inherit] size-full">
+        <div className="content-stretch flex gap-[10px] sm:gap-[12px] md:gap-[15px] items-stretch p-[15px] md:p-[20px] relative w-full">
+          {piData.map((pi, index) => (
+            <PICard
+              key={pi.id}
+              pi={pi}
+              isActive={index === activePiIndex}
+              onClick={() => onPiSelect(index)}
+            />
+          ))}
         </div>
       </div>
     </div>
@@ -221,15 +173,15 @@ function PIsCarousel() {
 
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full gap-[30px] md:gap-0" data-name="PIs Carousel">
-      {/* Carousel first on mobile */}
+      {/* Cards first on mobile */}
       <div className="block md:hidden w-full">
         <PIsList activePiIndex={activePiIndex} onPiSelect={setActivePiIndex} />
       </div>
-      
+
       {/* Current PI info */}
       <CurrentPi pi={activePi} />
-      
-      {/* Carousel below on desktop */}
+
+      {/* Cards below on desktop */}
       <div className="hidden md:block w-full">
         <PIsList activePiIndex={activePiIndex} onPiSelect={setActivePiIndex} />
       </div>
