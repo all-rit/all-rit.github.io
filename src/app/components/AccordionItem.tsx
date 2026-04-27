@@ -15,16 +15,16 @@ export default function AccordionItem({ title, content }: AccordionItemProps) {
         onClick={() => setIsOpen(!isOpen)}
         className="content-stretch flex h-[60px] items-center justify-between relative shrink-0 w-full cursor-pointer bg-transparent border-none p-0"
       >
-        <div className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[28px] md:text-[40px] text-black w-full text-left">
-          <p className="leading-[1.2]">{title}</p>
+        <div className="flex flex-col font-['Poppins',sans-serif] justify-center not-italic relative shrink-0 text-black w-full text-left">
+          <h2>{title}</h2>
         </div>
         <div
-          className={`flex h-[20px] items-center justify-center relative shrink-0 w-[49px] transition-transform duration-300 ${
+          className={`flex h-[20px] items-center justify-center relative shrink-0 w-[30px] transition-transform duration-300 ${
             isOpen ? 'rotate-[-90deg]' : 'rotate-90'
           }`}
         >
           <div className="flex flex-col font-['Calibri:Bold',sans-serif] justify-center leading-[0] not-italic relative text-[40px] text-black whitespace-nowrap">
-            <p className="leading-[normal]">{`<`}</p>
+            <p>{`<`}</p>
           </div>
         </div>
       </button>
@@ -39,7 +39,7 @@ export default function AccordionItem({ title, content }: AccordionItemProps) {
         <div className="content-stretch flex items-center justify-center pr-0 md:pr-[60px] relative shrink-0 w-full">
           <div className="flex flex-[1_0_0] flex-col font-['Calibri:Regular',sans-serif] justify-center leading-[1.4] min-w-px not-italic relative text-[16px] md:text-[18px] text-black">
             {typeof content === 'string' ? (
-              <p className="leading-[1.4] font-[Calibri]">{content}</p>
+              <p>{content}</p>
             ) : (
               content
             )}

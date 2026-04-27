@@ -3,8 +3,8 @@ function AboutUsText() {
     <div className="relative shrink-0 w-full" data-name="About Us Text">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center pr-0 md:pr-[60px] relative w-full">
-          <div className="flex flex-[1_0_0] flex-col font-['Calibri:Regular',sans-serif] justify-center leading-[1.4] min-h-px min-w-px not-italic relative text-[16px] md:text-[18px] text-black">
-            <p className="leading-[1.4] font-[Calibri]">Accessible Learning Labs is an NSF funded initiative aimed at fostering STEM proficiency. We are dedicated to equipping users with the skills and knowledge to create software solutions.</p>
+          <div className="flex flex-[1_0_0] flex-col font-['Calibri:Regular',sans-serif] justify-center min-h-px min-w-px not-italic text-black">
+            <p>Accessible Learning Labs is an NSF funded initiative aimed at fostering STEM proficiency. We are dedicated to equipping users with the skills and knowledge to create software solutions.</p>
           </div>
         </div>
       </div>
@@ -17,8 +17,8 @@ function AboutUs() {
     <div className="bg-white min-h-[300px] relative rounded-bl-[20px] rounded-tl-[20px] shrink-0 w-full" data-name="About Us">
       <div className="flex flex-col justify-center size-full">
         <div className="content-stretch flex flex-col gap-[20px] md:gap-[30px] items-start justify-center relative size-full p-[60px]">
-          <div className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[28px] md:text-[40px] text-black w-full">
-            <p className="leading-[1.2]">About Us</p>
+          <div className="flex flex-col font-['Poppins',sans-serif] justify-center not-italic relative shrink-0 text-black w-full">
+            <h1>About Us</h1>
           </div>
           <AboutUsText />
         </div>

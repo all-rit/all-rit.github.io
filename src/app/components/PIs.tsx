@@ -55,8 +55,8 @@ function PIsText() {
     <div className="relative shrink-0 w-full" data-name="PIs Text">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center pr-0 relative w-full">
-          <div className="flex flex-[1_0_0] flex-col font-['Calibri:Regular',sans-serif] justify-center leading-[1.4] min-h-px min-w-px not-italic relative text-[16px] md:text-[18px] text-black">
-            <p className="leading-[1.4] p-[0px]">These are the principal investigators and advisors behind the Accessible Learning Labs team. They provide guidance and leadership for our student team! We invite you to get to know each of them through their individualized cards.</p>
+          <div className="flex flex-[1_0_0] flex-col font-['Calibri:Regular',sans-serif] justify-center min-h-px min-w-px not-italic relative text-black">
+            <p>These are the principal investigators and advisors behind the Accessible Learning Labs team. They provide guidance and leadership for our student team! We invite you to get to know each of them through their individualized cards.</p>
           </div>
         </div>
       </div>
@@ -80,20 +80,20 @@ function Frame1({ pi }: { pi: typeof piData[0] }) {
 
 function Frame2({ pi }: { pi: typeof piData[0] }) {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-full items-start justify-center leading-[1.4] min-h-px min-w-px not-italic relative text-black">
-      <div className="flex flex-col font-['Poppins',sans-serif] justify-center relative shrink-0 text-[18px] md:text-[20px] w-full">
+    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-full items-start justify-center min-h-px min-w-px not-italic relative text-black">
+      <div className="flex flex-col font-['Poppins',sans-serif] justify-center relative shrink-0 w-full">
         <a
           href={pi.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="leading-[1.4] text-black hover:text-[#0144d5] underline underline-offset-2 transition-colors"
+          className=" text-black hover:text-[#0144d5] underline underline-offset-2 transition-colors"
         >
-          {pi.name}
+          <h2>{pi.name}</h2>
         </a>
       </div>
-      <div className="flex flex-col font-['Calibri:Regular',sans-serif] justify-center relative shrink-0 text-[16px] md:text-[18px] w-full">
-        <p className="leading-[1.4] mb-0">{pi.title}</p>
-        <p className="leading-[1.4]">{pi.institution}</p>
+      <div className="flex flex-col font-['Calibri:Regular',sans-serif] justify-center relative shrink-0 w-full">
+        <p>{pi.title}</p>
+        <p>{pi.institution}</p>
       </div>
     </div>
   );
@@ -195,7 +195,7 @@ function PIsSection() {
       <div className="flex flex-col justify-center size-full">
         <div className="content-stretch flex flex-col gap-[30px] md:gap-[50px] items-start justify-center relative w-full pl-[60px] pr-[60px] py-[60px]">
           <div className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[28px] md:text-[40px] text-black w-full">
-            <p className="leading-[1.2]">Principal Investigators</p>
+            <h1>Principal Investigators</h1>
           </div>
           <PIsText />
           <PIsCarousel />
