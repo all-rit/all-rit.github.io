@@ -1,5 +1,6 @@
 import svgPaths from "./logo.ts";
 import { Link } from "react-router";
+import { useState } from "react";
 
 function Logo() {
   return (
@@ -41,54 +42,44 @@ function Logo() {
   );
 }
 
+const navLinks = [
+  { to: "/", label: "Home" },
+  { to: "/resources", label: "Resources" },
+  { to: "/partners", label: "Partners" },
+  { to: "/professional-development", label: "Professional Development" },
+];
+
+function Divider() {
+  return (
+    <div className="hidden md:flex h-[18px] items-center justify-center relative shrink-0 w-0">
+      <div className="flex-none rotate-90">
+        <div className="h-0 relative w-[18px]">
+          <div className="absolute inset-[-2px_0_0_0]">
+            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 18 2">
+              <line id="Line 10" stroke="var(--stroke-0, #0144D5)" strokeLinecap="square" strokeWidth="2" x1="1" x2="17" y1="1" y2="1" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Frame() {
   return (
     <div className="col-1 content-stretch flex gap-[8px] md:gap-[16px] lg:gap-[24px] items-center justify-center ml-0 mt-0 px-[8px] md:px-[16px] lg:px-[24px] relative row-1 flex-wrap">
-      <Link to="/" className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[16px] lg:text-[18px] text-center no-underline hover:opacity-80 transition-opacity">
-        <p className="leading-[1.2] break-words">Home</p>
-      </Link>
-      <div className="hidden md:flex h-[18px] items-center justify-center relative shrink-0 w-0" style={{ "--transform-inner-width": "1200", "--transform-inner-height": "19" } as React.CSSProperties}>
-        <div className="flex-none rotate-90">
-          <div className="h-0 relative w-[18px]">
-            <div className="absolute inset-[-2px_0_0_0]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 18 2">
-                <line id="Line 10" stroke="var(--stroke-0, #0144D5)" strokeLinecap="square" strokeWidth="2" x1="1" x2="17" y1="1" y2="1" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Link to="/resources" className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[16px] lg:text-[18px] text-center no-underline hover:opacity-80 transition-opacity">
-        <p className="leading-[1.2] break-words">Resources</p>
-      </Link>
-      <div className="hidden md:flex h-[18px] items-center justify-center relative shrink-0 w-0" style={{ "--transform-inner-width": "1200", "--transform-inner-height": "19" } as React.CSSProperties}>
-        <div className="flex-none rotate-90">
-          <div className="h-0 relative w-[18px]">
-            <div className="absolute inset-[-2px_0_0_0]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 18 2">
-                <line id="Line 10" stroke="var(--stroke-0, #0144D5)" strokeLinecap="square" strokeWidth="2" x1="1" x2="17" y1="1" y2="1" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Link to="/partners" className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[16px] lg:text-[18px] text-center no-underline hover:opacity-80 transition-opacity">
-        <p className="leading-[1.2] break-words">Partners</p>
-      </Link>
-      <div className="hidden md:flex h-[18px] items-center justify-center relative shrink-0 w-0" style={{ "--transform-inner-width": "1200", "--transform-inner-height": "19" } as React.CSSProperties}>
-        <div className="flex-none rotate-90">
-          <div className="h-0 relative w-[18px]">
-            <div className="absolute inset-[-2px_0_0_0]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 18 2">
-                <line id="Line 10" stroke="var(--stroke-0, #0144D5)" strokeLinecap="square" strokeWidth="2" x1="1" x2="17" y1="1" y2="1" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Link to="/professional-development" className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[14px] lg:text-[18px] text-center max-w-[150px] md:max-w-none no-underline hover:opacity-80 transition-opacity">
-        <p className="leading-[1.2] break-words">Professional Development</p>
-      </Link>
+      {navLinks.map((link, i) => (
+        <>
+          <Link
+            key={link.to}
+            to={link.to}
+            className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[1.2] not-italic relative shrink-0 text-[#0144d5] text-[12px] md:text-[16px] lg:text-[18px] text-center no-underline hover:opacity-80 transition-opacity"
+          >
+            <p className="leading-[1.2] break-words">{link.label}</p>
+          </Link>
+          {i < navLinks.length - 1 && <Divider key={`divider-${i}`} />}
+        </>
+      ))}
     </div>
   );
 }
@@ -111,26 +102,62 @@ function Nav() {
 }
 
 export default function SharedHeader() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
-      {/* Mobile Header - with hamburger menu */}
-      <div className="md:hidden w-full">
-        <div className="bg-white content-stretch flex items-center justify-between px-[30px] py-[20px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.1)] size-full" data-name="Header">
+      {/* Mobile Header */}
+      <div className="md:hidden w-full relative z-50">
+        <div className="bg-white content-stretch flex items-center justify-between px-[30px] py-[20px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.1)]" data-name="Header">
           <Logo />
-          <div className="h-[50px] relative shrink-0 w-[70px]">
+          <button
+            onClick={() => setMenuOpen((prev) => !prev)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            className="h-[50px] relative shrink-0 w-[70px] bg-transparent border-none p-0 cursor-pointer"
+          >
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 70 50">
               <g id="Frame 2">
                 <rect height="49" rx="4.5" stroke="var(--stroke-0, #CECECE)" width="69" x="0.5" y="0.5" />
-                <path d="M20 15H50" id="Vector 1" stroke="var(--stroke-0, #CECECE)" strokeWidth="3" />
-                <path d="M20 25H50" id="Vector 2" stroke="var(--stroke-0, #CECECE)" strokeWidth="3" />
-                <path d="M20 35H50" id="Vector 3" stroke="var(--stroke-0, #CECECE)" strokeWidth="3" />
+                {menuOpen ? (
+                  // X icon when open
+                  <>
+                    <path d="M22 16L48 34" stroke="var(--stroke-0, #CECECE)" strokeWidth="3" strokeLinecap="round" />
+                    <path d="M48 16L22 34" stroke="var(--stroke-0, #CECECE)" strokeWidth="3" strokeLinecap="round" />
+                  </>
+                ) : (
+                  // Hamburger icon when closed
+                  <>
+                    <path d="M20 15H50" stroke="var(--stroke-0, #CECECE)" strokeWidth="3" />
+                    <path d="M20 25H50" stroke="var(--stroke-0, #CECECE)" strokeWidth="3" />
+                    <path d="M20 35H50" stroke="var(--stroke-0, #CECECE)" strokeWidth="3" />
+                  </>
+                )}
               </g>
             </svg>
-          </div>
+          </button>
         </div>
+
+        {/* Mobile dropdown menu */}
+        {menuOpen && (
+          <div className="absolute top-full left-0 w-full bg-white shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15)] border-l-[6px] border-l-[#face35] z-50">
+            <nav className="flex flex-col py-[10px]">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={() => setMenuOpen(false)}
+                  className="font-['Poppins',sans-serif] text-[#0144d5] text-[20px] font-bold no-underline px-[30px] py-[18px] hover:bg-gray-50 transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        )}
       </div>
 
-      {/* Desktop Header - with navigation */}
+      {/* Desktop Header */}
       <div className="hidden md:block bg-white relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.2)] shrink-0 w-full" data-name="Header">
         <div className="flex flex-row items-center size-full">
           <div className="content-stretch flex items-center justify-between px-[20px] md:px-[50px] py-[20px] relative size-full">
