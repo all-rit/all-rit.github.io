@@ -6,7 +6,7 @@ function InstitutionCard() {
         <div className="flex flex-col justify-center overflow-clip rounded-[inherit] size-full">
           <div className="content-stretch flex flex-col items-start justify-center px-[30px] py-[10px] relative size-full">
             <div className="flex flex-col font-['Poppins',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[20px] text-black whitespace-nowrap">
-              <p className="leading-[normal]">Lorem Ipsum</p>
+              <p className="leading-[normal]">TBA</p>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@ export default function Partners() {
                 <div className="flex flex-row items-center justify-center size-full">
                   <div className="content-stretch flex items-center justify-center pr-0 md:pr-[60px] relative w-full">
                     <div className="flex flex-[1_0_0] flex-col font-['Calibri:Regular',sans-serif] justify-center min-h-px min-w-px not-italic relative text-black">
-                      <p>Lorem ipsum dolor sit amet consectetur. Fermentum aliquam elementum nibh urna vel sed. Nam in tempus vitae eget et nibh velit. Habitasse semper a et elementum euismod neque curabitur. Arcu sodales eget tincidunt purus tellus adipiscing.</p>
+                      <p>All of our content is made possible through our team of student developers as well as our development partners.</p>
                     </div>
                   </div>
                 </div>
